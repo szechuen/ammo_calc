@@ -1,0 +1,36 @@
+---
+
+layout: form
+cat: rolling_sphere
+label: rolling_sphere-basic
+
+title: Rolling Sphere Lightning Protection
+subtitle: Basic
+
+---
+
+
+{% include form-group.html id='height_mast' label='Height of Mast' help='Height of lightning shielding mast above ground [in metre]' validate='number_positive' autofocus='yes' addon='m' %}
+
+{% include form-group.html id='height_equipment' label='Height of Equipment' help='Height of equipment needing protection (e.g. stacked ammunition containers) above ground [in metre]' validate='number_positive' autofocus='no' addon='m' %}
+
+{% include form-group.html id='sphere_radius' label='Radius of Rolling Sphere' help='Radius of "rolling sphere" which rolls over ground and shielding electrodes [in metre], also known as Strike Distance. Recommended value of 20m is appropriate for most lightning strokes' validate='number_positive' value='20' autofocus='no' addon='m' %}
+
+{% include calc-button.html function_name='calc' label='Calculate' %}
+
+{% include form-group.html id='protection_radius' label='Radius of Protection' help='Radius of protection around the lightning shielding mast for a given equipment height [in metre]' validate='none' autofocus='no' addon='m' disabled='yes' %}
+
+
+<script type="text/javascript">
+  function calc(){
+    if($('#form').parsley('validate')){
+      var S = Number(document.getElementById("sphere_radius").value);
+      var h_m = Number(document.getElementById("height_mast").value);
+      var h_e = Number(document.getElementById("height_equipment").value);
+
+      var r = rolling_sphere(S, h_m, h_e);
+
+      document.getElementById("protection_radius").value = toDP(r, 2);
+    }
+  }
+</script>

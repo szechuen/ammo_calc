@@ -1,0 +1,5 @@
+{% if include.validate == 'number_positive' %}parsley-type="number" parsley-min="0"{% endif %}
+
+{% if include.validate == 'digits_positive' %}parsley-type="digits" parsley-min="0"{% endif %}
+
+{% if include.validate == 'percentage' %}parsley-type="number" parsley-min="0" parsley-max="100"{% endif %}

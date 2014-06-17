@@ -1,0 +1,34 @@
+---
+
+layout: base
+
+---
+
+
+<form class="form-calc" role="form" id="form">
+  <h4 class="form-calc-heading">{{ page.title }} <br><small>{{ page.subtitle }}</small></h4>
+
+  {{ content }}
+
+</form>
+
+<script type="text/javascript">
+  $('#form').parsley({
+    successClass: 'has-success', 
+    errorClass: 'has-error', 
+    errors: {
+      classHandler: function (elem, isRadioOrCheckbox){
+          return $(elem).closest('.form-group');
+      }, 
+      container: function (element, isRadioOrCheckbox){
+        if(element.closest('.input-group').length){
+          $container = $("<span class='help-block'></span>").insertBefore(element.closest('.input-group'));
+        } else{
+          $container = $("<span class='help-block'></span>").insertBefore(element);
+        }
+        
+        return $container;
+      }
+    }
+  });
+</script>

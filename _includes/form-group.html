@@ -1,0 +1,30 @@
+{% unless include.only == 'footer' %}
+
+  {% if include.disabled == "yes" %}<fieldset disabled>{% endif %}
+
+    <div class="form-group">
+      <label class="control-label" for="{{ include.id }}">{{ include.label }}</label>&nbsp;
+
+      <a class="pull-right" data-toggle="collapse" href="#{{ include.id }}_help">More<span class="caret"></span></a>
+
+      <p class="help-block collapse" id="{{ include.id }}_help">{{ include.help }}</p>
+
+{% endunless %}
+
+{% unless include.only %}
+
+      {% if include.addon %}<div class="input-group">{% endif %}
+        <input type="text" {% include validate.html validate=include.validate %} class="form-control" id="{{ include.id }}" placeholder="{{ include.label }}" {% if include.value %}value="{{ include.value }}"{% endif %} required {% if include.autofocus == 'yes' %}autofocus{% endif %}>
+
+        {% if include.addon %}<span class="input-group-addon">{{ include.addon }}</span>{% endif %}
+      {% if include.addon %}</div>{% endif %}
+
+{% endunless %}
+
+{% unless include.only == 'header' %}
+
+    </div>
+
+  {% if include.disabled == "yes" %}</fieldset>{% endif %}
+
+{% endunless %}
