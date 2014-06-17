@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ammunition Quantitative Calculator — DLSA Quality Limit/Band · Reverse: Sample Size">
+    <meta name="author" content="Tan Sze Chuen">
+    <link rel="shortcut icon" href="/img/icon.png">
+
+    <title>Ammo Calc — DLSA Quality Limit/Band · Reverse: Sample Size</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/ammo_calc.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/parsley.min.js"></script>
+    <script type="text/javascript" src="/js/ammo_calc.js"></script>
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Ammo Calc</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li ><a href="/index.html">Home</a></li>
+
+            <li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">DSLA Quality Limit/Band <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li ><a href="/dlsa_quality/basic.html">Basic</a></li>
+                <li class="active"><a href="/dlsa_quality/reverse_sample_size.html">Reverse: Sample Size</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown ">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rolling Sphere Lightning Protection <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li ><a href="/rolling_sphere/basic.html">Basic</a></li>
+              </ul>
+            </li>
+
+            <li ><a href="/about.html">About</a></li>
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+    <div class="container">
+
+      <form class="form-calc" role="form" id="form">
+  <h4 class="form-calc-heading">DLSA Quality Limit/Band <br><small>Reverse: Sample Size</small></h4>
+
+  
+
+  
+
+    <div class="form-group">
+      <label class="control-label" for="defect_no">Number of Defects</label>&nbsp;
+
+      <a class="pull-right" data-toggle="collapse" href="#defect_no_help">More<span class="caret"></span></a>
+
+      <p class="help-block collapse" id="defect_no_help">Number of Defects</p>
+
+
+
+
+
+      
+        <input type="text" 
+
+parsley-type="digits" parsley-min="0"
+
+
+ class="form-control" id="defect_no" placeholder="Number of Defects"  required autofocus>
+
+        
+      
+
+
+
+
+
+    </div>
+
+  
+
+
+
+
+
+
+  
+
+    <div class="form-group">
+      <label class="control-label" for="max_sample_size">Maximum Sample Size</label>&nbsp;
+
+      <a class="pull-right" data-toggle="collapse" href="#max_sample_size_help">More<span class="caret"></span></a>
+
+      <p class="help-block collapse" id="max_sample_size_help">Maximum Sample Size</p>
+
+
+
+
+
+      
+        <input type="text" 
+
+parsley-type="digits" parsley-min="0"
+
+
+ class="form-control" id="max_sample_size" placeholder="Maximum Sample Size"  required >
+
+        
+      
+
+
+
+
+
+    </div>
+
+  
+
+
+
+
+
+
+  
+
+    <div class="form-group">
+      <label class="control-label" for="confidence_level">Confidence Level</label>&nbsp;
+
+      <a class="pull-right" data-toggle="collapse" href="#confidence_level_help">More<span class="caret"></span></a>
+
+      <p class="help-block collapse" id="confidence_level_help">Confidence Level</p>
+
+
+
+
+
+
+
+  <select class="form-control form-select" id="confidence_level" required>
+    <option value="1.6449">95% (Recommended)</option>
+    <option value="2.3263">99%</option>
+    <option value="1.2816">90%</option>
+    <option value="1.0364">85%</option>
+    <option value="0.8416">80%</option>
+    <option value="0.6745">75%</option>
+    <option value="0.5244">70%</option>
+    <option value="0.3853">65%</option>
+    <option value="0.2533">60%</option>
+  </select>
+
+
+
+
+
+
+    </div>
+
+  
+
+
+
+
+
+
+  
+
+    <div class="form-group">
+      <label class="control-label" for="quality_min">Minimum Quality Limit</label>&nbsp;
+
+      <a class="pull-right" data-toggle="collapse" href="#quality_min_help">More<span class="caret"></span></a>
+
+      <p class="help-block collapse" id="quality_min_help">Minimum Quality Limit</p>
+
+
+
+
+
+      <div class="input-group">
+        <input type="text" 
+
+
+
+parsley-type="number" parsley-min="0" parsley-max="100"
+ class="form-control" id="quality_min" placeholder="Minimum Quality Limit"  required >
+
+        <span class="input-group-addon">%</span>
+      </div>
+
+
+
+
+
+    </div>
+
+  
+
+
+
+
+<button class="btn btn-lg btn-primary btn-block form-calc-button" type="button" onclick="calc_sample_size()">Calculate Sample Size</button>
+
+
+
+
+  <fieldset disabled>
+
+    <div class="form-group">
+      <label class="control-label" for="sample_size">Sample Size</label>&nbsp;
+
+      <a class="pull-right" data-toggle="collapse" href="#sample_size_help">More<span class="caret"></span></a>
+
+      <p class="help-block collapse" id="sample_size_help">Sample Size</p>
+
+
+
+
+
+      
+        <input type="text" 
+
+
+
+
+ class="form-control" id="sample_size" placeholder="Sample Size"  required >
+
+        
+      
+
+
+
+
+
+    </div>
+
+  </fieldset>
+
+
+
+
+
+
+  <fieldset disabled>
+
+    <div class="form-group">
+      <label class="control-label" for="quality_lower">Lower Quality Limit</label>&nbsp;
+
+      <a class="pull-right" data-toggle="collapse" href="#quality_lower_help">More<span class="caret"></span></a>
+
+      <p class="help-block collapse" id="quality_lower_help">Lower Quality Limit</p>
+
+
+
+
+
+      <div class="input-group">
+        <input type="text" 
+
+
+
+
+ class="form-control" id="quality_lower" placeholder="Lower Quality Limit"  required >
+
+        <span class="input-group-addon">%</span>
+      </div>
+
+
+
+
+
+    </div>
+
+  </fieldset>
+
+
+
+
+
+
+  <fieldset disabled>
+
+    <div class="form-group">
+      <label class="control-label" for="quality_upper">Upper Quality Limit</label>&nbsp;
+
+      <a class="pull-right" data-toggle="collapse" href="#quality_upper_help">More<span class="caret"></span></a>
+
+      <p class="help-block collapse" id="quality_upper_help">Upper Quality Limit</p>
+
+
+
+
+
+      <div class="input-group">
+        <input type="text" 
+
+
+
+
+ class="form-control" id="quality_upper" placeholder="Upper Quality Limit"  required >
+
+        <span class="input-group-addon">%</span>
+      </div>
+
+
+
+
+
+    </div>
+
+  </fieldset>
+
+
+
+
+
+<script type="text/javascript">
+  function calc_sample_size(){
+    if($('#form').parsley('validate')){
+      var C = Number(document.getElementById("defect_no").value);
+      var n_max = Number(document.getElementById("max_sample_size").value);
+      var z = Number(document.getElementById("confidence_level").value);
+      var Q_min = Number(document.getElementById("quality_min").value);
+
+      var n;
+      var found = false;
+
+      for(n = 0; n <= n_max; n++){
+        document.getElementById("sample_size").value = n;
+
+        var Q = dlsa_quality(C, n, z);
+        var Q_lower = Q[0];
+        var Q_upper = Q[1];
+
+        document.getElementById("quality_lower").value = toDP(Q_lower, 2);
+        document.getElementById("quality_upper").value = toDP(Q_upper, 2);
+
+        if(Q_lower>=Q_min){
+          found = true;
+          break;
+        }
+      }
+
+      if(found){
+        document.getElementById("sample_size").parentNode.className = "form-group has-success";
+      } else{
+        document.getElementById("sample_size").parentNode.className = "form-group has-error";
+
+        document.getElementById("sample_size").value = "Not found";
+        document.getElementById("quality_lower").value = "";
+        document.getElementById("quality_upper").value = "";
+      }
+    }
+  }
+</script>
+
+
+</form>
+
+<script type="text/javascript">
+  $('#form').parsley({
+    successClass: 'has-success', 
+    errorClass: 'has-error', 
+    errors: {
+      classHandler: function (elem, isRadioOrCheckbox){
+          return $(elem).closest('.form-group');
+      }, 
+      container: function (element, isRadioOrCheckbox){
+        if(element.closest('.input-group').length){
+          $container = $("<span class='help-block'></span>").insertBefore(element.closest('.input-group'));
+        } else{
+          $container = $("<span class='help-block'></span>").insertBefore(element);
+        }
+        
+        return $container;
+      }
+    }
+  });
+</script>
+
+
+    </div> <!-- /container -->
+
+  </body>
+</html>

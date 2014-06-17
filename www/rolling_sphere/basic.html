@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ammunition Quantitative Calculator — Rolling Sphere Lightning Protection · Basic">
+    <meta name="author" content="Tan Sze Chuen">
+    <link rel="shortcut icon" href="/img/icon.png">
+
+    <title>Ammo Calc — Rolling Sphere Lightning Protection · Basic</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/ammo_calc.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/parsley.min.js"></script>
+    <script type="text/javascript" src="/js/ammo_calc.js"></script>
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Ammo Calc</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li ><a href="/index.html">Home</a></li>
+
+            <li class="dropdown ">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">DSLA Quality Limit/Band <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li ><a href="/dlsa_quality/basic.html">Basic</a></li>
+                <li ><a href="/dlsa_quality/reverse_sample_size.html">Reverse: Sample Size</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rolling Sphere Lightning Protection <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="/rolling_sphere/basic.html">Basic</a></li>
+              </ul>
+            </li>
+
+            <li ><a href="/about.html">About</a></li>
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+    <div class="container">
+
+      <form class="form-calc" role="form" id="form">
+  <h4 class="form-calc-heading">Rolling Sphere Lightning Protection <br><small>Basic</small></h4>
+
+  
+
+  
+
+    <div class="form-group">
+      <label class="control-label" for="height_mast">Height of Mast</label>&nbsp;
+
+      <a class="pull-right" data-toggle="collapse" href="#height_mast_help">More<span class="caret"></span></a>
+
+      <p class="help-block collapse" id="height_mast_help">Height of lightning shielding mast above ground [in metre]</p>
+
+
+
+
+
+      <div class="input-group">
+        <input type="text" parsley-type="number" parsley-min="0"
+
+
+
+
+ class="form-control" id="height_mast" placeholder="Height of Mast"  required autofocus>
+
+        <span class="input-group-addon">m</span>
+      </div>
+
+
+
+
+
+    </div>
+
+  
+
+
+
+
+
+
+  
+
+    <div class="form-group">
+      <label class="control-label" for="height_equipment">Height of Equipment</label>&nbsp;
+
+      <a class="pull-right" data-toggle="collapse" href="#height_equipment_help">More<span class="caret"></span></a>
+
+      <p class="help-block collapse" id="height_equipment_help">Height of equipment needing protection (e.g. stacked ammunition containers) above ground [in metre]</p>
+
+
+
+
+
+      <div class="input-group">
+        <input type="text" parsley-type="number" parsley-min="0"
+
+
+
+
+ class="form-control" id="height_equipment" placeholder="Height of Equipment"  required >
+
+        <span class="input-group-addon">m</span>
+      </div>
+
+
+
+
+
+    </div>
+
+  
+
+
+
+
+
+
+  
+
+    <div class="form-group">
+      <label class="control-label" for="sphere_radius">Radius of Rolling Sphere</label>&nbsp;
+
+      <a class="pull-right" data-toggle="collapse" href="#sphere_radius_help">More<span class="caret"></span></a>
+
+      <p class="help-block collapse" id="sphere_radius_help">Radius of "rolling sphere" which rolls over ground and shielding electrodes [in metre], also known as Strike Distance. Recommended value of 20m is appropriate for most lightning strokes</p>
+
+
+
+
+
+      <div class="input-group">
+        <input type="text" parsley-type="number" parsley-min="0"
+
+
+
+
+ class="form-control" id="sphere_radius" placeholder="Radius of Rolling Sphere" value="20" required >
+
+        <span class="input-group-addon">m</span>
+      </div>
+
+
+
+
+
+    </div>
+
+  
+
+
+
+
+<button class="btn btn-lg btn-primary btn-block form-calc-button" type="button" onclick="calc()">Calculate</button>
+
+
+
+
+  <fieldset disabled>
+
+    <div class="form-group">
+      <label class="control-label" for="protection_radius">Radius of Protection</label>&nbsp;
+
+      <a class="pull-right" data-toggle="collapse" href="#protection_radius_help">More<span class="caret"></span></a>
+
+      <p class="help-block collapse" id="protection_radius_help">Radius of protection around the lightning shielding mast for a given equipment height [in metre]</p>
+
+
+
+
+
+      <div class="input-group">
+        <input type="text" 
+
+
+
+
+ class="form-control" id="protection_radius" placeholder="Radius of Protection"  required >
+
+        <span class="input-group-addon">m</span>
+      </div>
+
+
+
+
+
+    </div>
+
+  </fieldset>
+
+
+
+
+
+<script type="text/javascript">
+  function calc(){
+    if($('#form').parsley('validate')){
+      var S = Number(document.getElementById("sphere_radius").value);
+      var h_m = Number(document.getElementById("height_mast").value);
+      var h_e = Number(document.getElementById("height_equipment").value);
+
+      var r = rolling_sphere(S, h_m, h_e);
+
+      document.getElementById("protection_radius").value = toDP(r, 2);
+    }
+  }
+</script>
+
+
+</form>
+
+<script type="text/javascript">
+  $('#form').parsley({
+    successClass: 'has-success', 
+    errorClass: 'has-error', 
+    errors: {
+      classHandler: function (elem, isRadioOrCheckbox){
+          return $(elem).closest('.form-group');
+      }, 
+      container: function (element, isRadioOrCheckbox){
+        if(element.closest('.input-group').length){
+          $container = $("<span class='help-block'></span>").insertBefore(element.closest('.input-group'));
+        } else{
+          $container = $("<span class='help-block'></span>").insertBefore(element);
+        }
+        
+        return $container;
+      }
+    }
+  });
+</script>
+
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
