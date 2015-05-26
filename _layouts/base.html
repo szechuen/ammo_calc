@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Ammunition Quantitative Calculator — {{ page.title }} · {{ page.subtitle }}">
     <meta name="author" content="Tan Sze Chuen">
-    <link rel="shortcut icon" href="{{ site.baseurl }}<script type="text/javascript">if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/img/icon.png">
+    <link rel="shortcut icon" href="{{ site.baseurl }}<script type='text/javascript'>if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/img/icon.png">
 
     <title>Ammo Calc — {{ page.title }} · {{ page.subtitle }}</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{{ site.baseurl }}<script type="text/javascript">if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}<script type='text/javascript'>if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="{{ site.baseurl }}<script type="text/javascript">if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/css/ammo_calc.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}<script type='text/javascript'>if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/css/ammo_calc.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -22,10 +22,10 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script type="text/javascript" src="{{ site.baseurl }}<script type="text/javascript">if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/js/jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="{{ site.baseurl }}<script type="text/javascript">if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="{{ site.baseurl }}<script type="text/javascript">if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/js/parsley.min.js"></script>
-    <script type="text/javascript" src="{{ site.baseurl }}<script type="text/javascript">if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/js/ammo_calc.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}<script type='text/javascript'>if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}<script type='text/javascript'>if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}<script type='text/javascript'>if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/js/parsley.min.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}<script type='text/javascript'>if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/js/ammo_calc.js"></script>
   </head>
 
   <body>
@@ -39,28 +39,28 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{{ site.baseurl }}<script type="text/javascript">if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/">Ammo Calc</a>
+          <a class="navbar-brand" href="{{ site.baseurl }}<script type='text/javascript'>if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/">Ammo Calc</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li {% if page.label == 'index' %}class="active"{% endif %}><a href="{{ site.baseurl }}<script type="text/javascript">if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/index.html">Home</a></li>
+            <li {% if page.label == 'index' %}class="active"{% endif %}><a href="{{ site.baseurl }}<script type='text/javascript'>if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/index.html">Home</a></li>
 
             <li class="dropdown {% if page.cat == 'dlsa_quality' %}active{% endif %}">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">DSLA Quality Limit/Band <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li {% if page.label == 'dlsa_quality-basic' %}class="active"{% endif %}><a href="{{ site.baseurl }}<script type="text/javascript">if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/dlsa_quality/basic.html">Basic</a></li>
-                <li {% if page.label == 'dlsa_quality-reverse_sample_size' %}class="active"{% endif %}><a href="{{ site.baseurl }}<script type="text/javascript">if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/dlsa_quality/reverse_sample_size.html">Reverse: Sample Size</a></li>
+                <li {% if page.label == 'dlsa_quality-basic' %}class="active"{% endif %}><a href="{{ site.baseurl }}<script type='text/javascript'>if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/dlsa_quality/basic.html">Basic</a></li>
+                <li {% if page.label == 'dlsa_quality-reverse_sample_size' %}class="active"{% endif %}><a href="{{ site.baseurl }}<script type='text/javascript'>if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/dlsa_quality/reverse_sample_size.html">Reverse: Sample Size</a></li>
               </ul>
             </li>
 
             <li class="dropdown {% if page.cat == 'rolling_sphere' %}active{% endif %}">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rolling Sphere Lightning Protection <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li {% if page.label == 'rolling_sphere-basic' %}class="active"{% endif %}><a href="{{ site.baseurl }}<script type="text/javascript">if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/rolling_sphere/basic.html">Basic</a></li>
+                <li {% if page.label == 'rolling_sphere-basic' %}class="active"{% endif %}><a href="{{ site.baseurl }}<script type='text/javascript'>if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/rolling_sphere/basic.html">Basic</a></li>
               </ul>
             </li>
 
-            <li {% if page.label == 'about' %}class="active"{% endif %}><a href="{{ site.baseurl }}<script type="text/javascript">if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/about.html">About</a></li>
+            <li {% if page.label == 'about' %}class="active"{% endif %}><a href="{{ site.baseurl }}<script type='text/javascript'>if(cordova.file.applicationDirectory){document.write(cordova.file.applicationDirectory);}</script>/about.html">About</a></li>
 
           </ul>
         </div><!--/.nav-collapse -->
