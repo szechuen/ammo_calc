@@ -1,2 +1,2 @@
 destination: _site
-exclude: [build.sh]
+exclude: [build.sh, README.md, LICENSE]
