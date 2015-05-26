@@ -2,9 +2,11 @@
 <html lang="en">
   <head>
     <script type="text/javascript">
-      if(cordova.file.applicationDirectory)
+      var curr_path = window.location.pathname;
+      if(curr_path.lastIndexOf('www/') != -1)
       {
-        document.write('<base href="' + cordova.file.applicationDirectory + '">');
+        var base_path = curr_path.substring(0, curr_path.lastIndexOf('www/')) + 'www/';
+        document.write('<base href="' + base_path + '">');
       }
     </script>
 
